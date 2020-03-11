@@ -2,7 +2,8 @@
 
 const store = {
   currentPlayer: 'X',
-  board: ['', '', '', '', '', '', '', '', '']
+  board: ['', '', '', '', '', '', '', '', ''],
+  isGameOver: false
 }
 
 module.exports = store
