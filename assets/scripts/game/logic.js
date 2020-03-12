@@ -27,8 +27,12 @@ const isWinner = () => {
 // This function is written on the basis that it will always be called after isWinner
 const isDraw = () => !store.board.some(value => value === '')
 
+const clearBoard = () => {
+  store.board = ['', '', '', '', '', '', '', '', '']
+}
 module.exports = {
   switchPlayer,
   isWinner,
-  isDraw
+  isDraw,
+  clearBoard
 }

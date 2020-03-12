@@ -22,8 +22,10 @@ const draw = () => {
 const newGameSuccess = data => {
   console.log('newGameSuccess data is: ', data)
   $('.grid-container > div').text('')
+  logic.clearBoard()
   $('.grid-container').removeClass('hidden')
   $('#message').text('You have started a new game. Player X goes first.')
+  store.isGameOver = false
   store.game = data.game
 }
 

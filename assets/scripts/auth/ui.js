@@ -8,25 +8,25 @@ const clearForm = formID => {
 }
 
 const signUpSuccess = function (data) {
-  $('#authMessage').text('Signed up successfully. Please login to proceed.')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('success')
+  $('#auth-message').text('Signed up successfully. Please login to proceed.')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
   console.log('signUpSuccess data is: ', data)
   clearForm('sign-up')
 }
 
 const signUpFailure = function (error) {
-  $('#authMessage').text('Sign up failed')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('failure')
+  $('#auth-message').text('Sign up failed')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   console.log('signUpFailure error is: ', error)
   $('#sign-up')[0].reset()
 }
 
 const signInSuccess = function (data) {
-  $('#authMessage').text('Signed in successfully')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('success')
+  $('#auth-message').text('Signed in successfully')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
   console.log('signInSuccess data is: ', data)
   clearForm('sign-in')
   $('nav > .hidden').removeClass('hidden')
@@ -36,34 +36,34 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  $('#authMessage').text('Sign in failed')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('failure')
+  $('#auth-message').text('Sign in failed')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   console.log('signInFailure error is: ', error)
   $('#sign-in')[0].reset()
 }
 
 const changePasswordSuccess = function (data) {
-  $('#authMessage').text('Changed password')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('success')
+  $('#auth-message').text('Changed password')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
   console.log('changePasswordSuccess data is: ', data)
   $('#change-password')[0].reset()
   $('#change-password').addClass('hidden')
 }
 
 const changePasswordFailure = function (error) {
-  $('#authMessage').text('Could not change password')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('failure')
+  $('#auth-message').text('Could not change password')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   console.log('changePasswordFailure error is: ', error)
   $('#change-password')[0].reset()
 }
 
 const signOutSuccess = function (data) {
-  $('#authMessage').text('Signed Out')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('success')
+  $('#auth-message').text('Signed Out')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
   console.log('signOutSuccess data is: ', data)
   $('nav > button').addClass('hidden')
   $('#login-nav').removeClass('hidden')
@@ -71,14 +71,14 @@ const signOutSuccess = function (data) {
   $('form').addClass('hidden')
   $('section').addClass('hidden')
   $('.grid-container').addClass('hidden')
-  $('#message').addClass('hidden')
-  $('#stats-message').addClass('hidden')
+  $('#message').text('')
+  $('#stats-message').text('')
 }
 
 const signOutFailure = function (error) {
-  $('#authMessage').text('Could not sign out')
-  $('#authMessage').removeClass()
-  $('#authMessage').addClass('failure')
+  $('#auth-message').text('Could not sign out')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   console.log('signOutFailure error is: ', error)
 }
 

@@ -6,9 +6,9 @@ const hideViews = () => {
   $('form').addClass('hidden')
   $('section').addClass('hidden')
   $('.grid-container').addClass('hidden')
-  $('#authMessage').addClass('hidden')
-  $('#message').addClass('hidden')
-  $('#stats-message').addClass('hidden')
+  $('#auth-message').text('')
+  $('#message').text('')
+  $('#stats-message').text('')
 }
 
 const onRegisterNav = () => {
@@ -28,6 +28,7 @@ const onGameNav = () => {
 
 const onStatsNav = () => {
   hideViews()
+  $('#game-total').text('')
   ui.showView('statistics')
 }
 
