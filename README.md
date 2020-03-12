@@ -38,8 +38,10 @@ I also drew up a couple of initial wireframes.
 ![alt-text][wireframe1]
 
 I worked through the above list, and I was able to troubleshoot any bugs I came across by reviewing my code and using console logs, until I got to the API calls to update the server. Before setting up any of the API calls, I ran them as curl scripts to help me identify any issues before I started making the calls in my code. While my curl script worked fine for updating the game on the server, my AJAX call was resulting in a 400 Bad Request error. I looked through the request to see if there were any missing commas, and missing parentheses, the URL was correct, and I got to the point where I was confident that the issue was with my JSON object, but I couldn't tell what it was.
+
 I then opened an issue request on github to let the instructors know that I was stuck, what I was stuck on, and what I had tried. One of the instructors then walked me through some additional troubleshooting steps: reviewing the error object I got back from the server, checking how the browser was representing the JSON object, and finally submitting a JavaScript object to the AJAX function instead of a JSON object. It turned out that the issue was that the AJAX function was expecting a JavaScript object, not a JSON object.
-Once I got past that blocker I was able to finish writing the application. Once I felt I was done I then performed some testing to make sure it worked the way I expected: making sure each of the buttons does what it's supposed, that buttons only display when they are relavent, and trying out doing things in different orders. At this point I had a functional application.
+
+Once I got past that blocker I was able to finish writing the application. Once I felt I was done I then performed some testing to make sure it worked the way I expected: making sure each of the buttons does what it's supposed, that buttons only display when they are relavent, and trying out doing things in different orders. At this point I had a functional application.  
 
 ## To Do list
 -Update CSS to make the site more visually appealing
