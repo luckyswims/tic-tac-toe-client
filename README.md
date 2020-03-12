@@ -43,6 +43,12 @@ I then opened an issue request on github to let the instructors know that I was 
 
 Once I got past that blocker I was able to finish writing the application. Once I felt I was done I then performed some testing to make sure it worked the way I expected: making sure each of the buttons does what it's supposed, that buttons only display when they are relavent, and trying out doing things in different orders. At this point I had a functional application.
 
+Now that I have built the website, I have a better feel for what I should include in my wireframes, so I redid my wireframes to use for any updates or styling that I apply.
+
+![alt-text][wireframePage1]
+![alt-text][wireframePage2]
+![alt-text][wireframePage3]
+
 ## To Do list
 -Update CSS to make the site more visually appealing  
 -Add more detailed statistics: completed games,  incomplete games, wins/losses/draws  
@@ -50,3 +56,6 @@ Once I got past that blocker I was able to finish writing the application. Once 
 -Add the ability for users logged in on different devices to play against each other  
 
 [wireframe1]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/Initial%20Wireframes.jpg
+[wireframePage1]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/wireframePage1.jpg
+[wireframePage2]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/wireframePage2.jpg
+[wireframePage3]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/wireframePage3.jpg
