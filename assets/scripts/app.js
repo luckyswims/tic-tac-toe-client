@@ -8,11 +8,19 @@
 
 const gameEvents = require('./game/events')
 const authEvents = require('./auth/events')
+const navEvents = require('./nav/events')
 
 $(() => {
-  $('.grid-container > div').on('click', gameEvents.onBoxClick)
+  $('#register-nav').on('click', navEvents.onRegisterNav)
+  $('#login-nav').on('click', navEvents.onLoginNav)
+  $('#game-nav').on('click', navEvents.onGameNav)
+  $('#stats-nav').on('click', navEvents.onStatsNav)
+  $('#password-nav').on('click', navEvents.onPasswordNav)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#logout-nav').on('click', authEvents.onSignOut)
+  $('#new-game').on('submit', gameEvents.onNewGame)
+  $('.grid-container > div').on('click', gameEvents.onBoxClick)
+  $('#get-stats').on('click', gameEvents.onGetStats)
 })

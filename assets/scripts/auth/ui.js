@@ -2,12 +2,17 @@
 
 const store = require('../store')
 
+const clearForm = formID => {
+  $(`#${formID}`)[0].reset()
+  $(`#${formID}`).addClass('hidden')
+}
+
 const signUpSuccess = function (data) {
-  $('#authMessage').text('Signed up successfully')
+  $('#authMessage').text('Signed up successfully. Please login to proceed.')
   $('#authMessage').removeClass()
   $('#authMessage').addClass('success')
   console.log('signUpSuccess data is: ', data)
-  $('#sign-up')[0].reset()
+  clearForm('sign-up')
 }
 
 const signUpFailure = function (error) {
@@ -23,7 +28,10 @@ const signInSuccess = function (data) {
   $('#authMessage').removeClass()
   $('#authMessage').addClass('success')
   console.log('signInSuccess data is: ', data)
-  $('#sign-in')[0].reset()
+  clearForm('sign-in')
+  $('nav > .hidden').removeClass('hidden')
+  $('#login-nav').addClass('hidden')
+  $('#register-nav').addClass('hidden')
   store.user = data.user
 }
 
@@ -41,6 +49,7 @@ const changePasswordSuccess = function (data) {
   $('#authMessage').addClass('success')
   console.log('changePasswordSuccess data is: ', data)
   $('#change-password')[0].reset()
+  $('#change-password').addClass('hidden')
 }
 
 const changePasswordFailure = function (error) {
@@ -56,6 +65,14 @@ const signOutSuccess = function (data) {
   $('#authMessage').removeClass()
   $('#authMessage').addClass('success')
   console.log('signOutSuccess data is: ', data)
+  $('nav > button').addClass('hidden')
+  $('#login-nav').removeClass('hidden')
+  $('#register-nav').removeClass('hidden')
+  $('form').addClass('hidden')
+  $('section').addClass('hidden')
+  $('.grid-container').addClass('hidden')
+  $('#message').addClass('hidden')
+  $('#stats-message').addClass('hidden')
 }
 
 const signOutFailure = function (error) {

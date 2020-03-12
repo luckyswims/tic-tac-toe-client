@@ -1,10 +1,19 @@
 'use strict'
 
 const store = require('../store')
-const logic = require('./logic')
+const api = require('./api')
 const ui = require('./ui')
+const logic = require('./logic')
 
-const onBoxClick = (event) => {
+const onNewGame = event => {
+  event.preventDefault()
+  console.log('New Game Clicked!')
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
+
+const onBoxClick = event => {
   const squareId = event.target.id
   console.log('Square ID: ' + squareId)
   const squareValue = $(`#${squareId}`).text()
@@ -22,13 +31,23 @@ const onBoxClick = (event) => {
       store.isGameOver = true
       return
     }
-    logic.switchPlayer()
-    ui.nextPlayer(store.currentPlayer)
+    api.boxClick(squareId)
+      .then(ui.boxClickSuccess)
+      .catch(ui.boxClickFailure)
   } else if (!store.isGameOver) {
     ui.invalidSpace(store.currentPlayer)
   }
 }
 
+const onGetStats = () => {
+  console.log('Get Stats Clicked')
+  api.getStats()
+    .then(ui.onGetStatsSuccess)
+    .catch(ui.onGetStatsFailure)
+}
+
 module.exports = {
-  onBoxClick
+  onBoxClick,
+  onNewGame,
+  onGetStats
 }

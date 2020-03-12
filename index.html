@@ -18,17 +18,17 @@
     <h1>Lucky's Tic-Tac-Toe</h1>
   </header>
   <nav>
-    <a href="">Game</a>
-    <a href="">Statistics</a>
-    <a href="">Register</a>
-    <a href="">Login</a>
-    <a href="">Logout</a>
-    <a href="">Change Password</a>
+    <button id="game-nav" class="hidden">Game</button>
+    <button id="stats-nav" class="hidden">Statistics</button>
+    <button id="register-nav">Register</button>
+    <button id="login-nav">Login</button>
+    <button id="logout-nav" class="hidden">Logout</button>
+    <button id="password-nav" class="hidden">Change Password</button>
   </nav>
   <main>
     <p id="authMessage"></p>
 
-    <form id="sign-up">
+    <form id="sign-up" class="hidden">
       <fieldset>
         <legend>Sign up!</legend>
         <input type="text" name="credentials[email]" placeholder="name@domain.com">
@@ -38,7 +38,7 @@
       </fieldset>
     </form>
 
-    <form id="sign-in">
+    <form id="sign-in" class="hidden">
       <fieldset>
         <legend>Sign in!</legend>
         <input type="text" name="credentials[email]" placeholder="name@domain.com">
@@ -47,7 +47,7 @@
       </fieldset>
     </form>
 
-    <form id="change-password">
+    <form id="change-password" class="hidden">
       <fieldset>
         <legend>Change your password</legend>
         <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -56,16 +56,22 @@
       </fieldset>
     </form>
 
-    <form id="sign-out">
+    <section id="statistics" class="hidden">
+      <button id="get-stats">Get Statistics</button>
+      <p id="stats-message"></p>
+      <p>Total Games <span id="game-total"></span></p>
+    </section>
+
+    <p id="message"></p>
+
+    <form id="new-game" class="hidden">
       <fieldset>
-        <legend>Sign out!</legend>
-        <input type="submit" value="Sign Out">
+        <legend>New Game!</legend>
+        <input type="submit" value="New Game">
       </fieldset>
     </form>
 
-    <p id="message">Player X goes first.</p>
-
-    <div class="grid-container">
+    <div class="grid-container hidden">
       <div id="0"></div>
       <div id="1"></div>
       <div id="2"></div>
