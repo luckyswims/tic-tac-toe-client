@@ -46,3 +46,5 @@ Once I got past that blocker I was able to finish writing the application. Once 
 -Add more detailed statistics: completed games, incomplete games, wins/losses/draws
 -Add the ability to restart an incomplete game
 -Add the ability for users logged in on different devices to play against each other
+
+[wireframe1]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/Initial%20Wireframes.jpg
