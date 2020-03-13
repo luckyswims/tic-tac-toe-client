@@ -1,17 +1,112 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
 
-$border-color: #000;
+$background-color: #eff6e0;
+$background-color-dark: #aec3b0;
+$font-color: #031a6b;
+$error-font-color: #8c0014;
+$border-color: #035e7b;
+$emphasis-color: #05b2dc;
+$box-size: 100px;
 
-div {
-  border: 5px solid $border-color;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+}
+
+button {
+  margin: 8px 0;
+}
+
+nav {
+  background-color: $background-color-dark;
+  border-bottom: 2px solid $border-color;
+  border-top: 2px solid $border-color;
+  margin: 8px 0;
+
+  button {
+    background-color: $background-color-dark;
+    border: 0;
+    margin: 0;
+    padding: 3px 5px;
+
+    &:hover {
+      background-color: $emphasis-color;
+    }
+  }
+}
+
+p {
+  margin: 0;
+}
+
+legend {
+  font-size: 18px;
+  margin: 0;
+  padding: 8px;
+}
+
+footer {
+  background-color: $background-color-dark;
+  margin-top: auto;
+  padding: 20px 0;
+}
+
+form {
+  font-size: 18px;
+}
+
+section {
+  padding: 8px;
+
+  p {
+    padding: 8px;
+  }
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 50px 50px 50px;
-  grid-template-rows: 50px 50px 50px;
+  align-content: center;
+  background-color: $background-color-dark;
+  display: inline-grid;
+  grid-template-columns: $box-size $box-size $box-size;
+  grid-template-rows: $box-size $box-size $box-size;
+  margin: 3px 0;
+
+  > div {
+    border: 2px solid $border-color;
+    font-size: 50px;
+    line-height: $box-size;
+    text-align: center;
+  }
+}
+
+.failure {
+  color: $error-font-color;
 }
 
 .hidden {
   display: none;
+}
+
+.message {
+  display: inline;
+  font-size: 18px;
+  padding: 5px;
+
+  &.hidden {
+    padding: 0;
+  }
+}
+
+.success {
+  color: $emphasis-color;
 }

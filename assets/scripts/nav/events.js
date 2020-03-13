@@ -6,9 +6,8 @@ const hideViews = () => {
   $('form').addClass('hidden')
   $('section').addClass('hidden')
   $('.grid-container').addClass('hidden')
-  $('#auth-message').text('')
-  $('#message').text('')
-  $('#stats-message').text('')
+  $('.message').text('')
+  $('.message').addClass('hidden')
 }
 
 const onRegisterNav = () => {

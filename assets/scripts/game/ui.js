@@ -3,20 +3,32 @@
 const store = require('../store')
 const logic = require('./logic')
 
+const success = () => {
+  $('#game-message').removeClass('failure')
+  $('#game-message').addClass('success')
+}
+
+const failure = () => {
+  $('#game-message').removeClass('success')
+  $('#game-message').addClass('failure')
+}
+
 const nextPlayer = player => {
-  $('#message').text(`It is now player ${player}'s turn`)
+  $('#game-message').text(`It is now player ${player}'s turn`)
+  success()
 }
 
 const invalidSpace = player => {
-  $('#message').text(`Invalid space. It is still player ${player}'s turn`)
+  $('#game-message').text(`Invalid space. It is still player ${player}'s turn`)
+  failure()
 }
 
 const winner = player => {
-  $('#message').text(`${player} is the winner!`)
+  $('#game-message').text(`${player} is the winner!`)
 }
 
 const draw = () => {
-  $('#message').text('The game is a draw')
+  $('#game-message').text('The game is a draw')
 }
 
 const newGameSuccess = data => {
@@ -24,36 +36,45 @@ const newGameSuccess = data => {
   $('.grid-container > div').text('')
   logic.clearBoard()
   $('.grid-container').removeClass('hidden')
-  $('#message').text('You have started a new game. Player X goes first.')
+  $('#game-message').text('You have started a new game. Player X goes first.')
   store.isGameOver = false
   store.game = data.game
+  store.currentPlayer = 'X'
+  success()
 }
 
 const newGameFailure = error => {
   console.log('newGameFailure error is: ', error)
-  $('#message').text('Error. A new game was unable to be created.')
+  $('#game-message').text('Error. A new game was unable to be created.')
+  failure()
 }
 
 const boxClickSuccess = data => {
   console.log('boxClickSuccess data is: ', data)
   logic.switchPlayer()
   nextPlayer(store.currentPlayer)
+  success()
 }
 
 const boxClickFailure = error => {
   console.log('boxClickFailure error is: ', error)
-  $('#message').text('Error. Unable to update move on the server.')
+  $('#game-message').text('Error. Unable to update move on the server.')
+  failure()
 }
 
 const onGetStatsSuccess = data => {
   console.log('onGetStatsSuccess data is: ', data)
   $('#stats-message').text('Statistics successfully retrieved!')
+  $('#stats-message').removeClass('failure')
+  $('#stats-message').addClass('success')
   $('#game-total').text(data.games.length)
 }
 
 const onGetStatsFailure = error => {
   console.log('onGetStatsFailure error is: ', error)
   $('#stats-message').text('Error. Unable to retrieve statistics!')
+  $('#stats-message').removeClass('success')
+  $('#stats-message').addClass('failure')
 }
 
 module.exports = {

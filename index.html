@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Tic-Tac-Toe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -26,7 +26,7 @@
     <button id="password-nav" class="hidden">Change Password</button>
   </nav>
   <main>
-    <p id="auth-message"></p>
+    <p id="auth-message" class="message"></p>
 
     <form id="sign-up" class="hidden">
       <fieldset>
@@ -58,11 +58,13 @@
 
     <section id="statistics" class="hidden">
       <button id="get-stats">Get Statistics</button>
-      <p id="stats-message"></p>
-      <p>Total Games <span id="game-total"></span></p>
+      <div>
+        <p id="stats-message" class="message"></p>
+        <p>Total Games: <span id="game-total"></span></p>
+      </div>
     </section>
 
-    <p id="message"></p>
+    <p id="game-message" class="message"></p>
 
     <form id="new-game" class="hidden">
       <fieldset>
@@ -85,6 +87,7 @@
 
   </main>
   <footer>
+    <p>This application is published on github: <a href="https://github.com/luckyswims/tic-tac-toe-client">Github Link</a></p>
   </footer>
 </body>
 
