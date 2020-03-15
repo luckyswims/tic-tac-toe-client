@@ -22,14 +22,12 @@ const onBoxClick = event => {
   if (squareValue === '' && !store.isGameOver) {
     $(`#${squareId}`).text(store.currentPlayer)
     store.board[squareId] = store.currentPlayer
-    if (logic.isWinner()) {
+    if (logic.isWinner(store.board)) {
       ui.winner(store.currentPlayer)
       store.isGameOver = true
-      return
-    } else if (logic.isDraw()) {
+    } else if (logic.isDraw(store.board)) {
       ui.draw()
       store.isGameOver = true
-      return
     }
     api.boxClick(squareId)
       .then(ui.boxClickSuccess)

@@ -50,8 +50,10 @@ Now that I have built the website, I have a better feel for what I should includ
 ![alt-text][wireframePage3]
 
 ## To Do list
--Update CSS to make the site more visually appealing  
--Add more detailed statistics: completed games,  incomplete games, wins/losses/draws  
+~~-Update CSS to make the site more visually appealing~~  
+~~-Add more detailed statistics: completed games,  incomplete games, wins/losses/draws~~  
+-Add an AI opponent  
+-Add difficult leves for the AI opponent  
 -Add the ability to restart an incomplete game  
 -Add the ability for users logged in on different devices to play against each other  
 

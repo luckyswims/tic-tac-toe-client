@@ -51,8 +51,10 @@ const newGameFailure = error => {
 
 const boxClickSuccess = data => {
   console.log('boxClickSuccess data is: ', data)
-  logic.switchPlayer()
-  nextPlayer(store.currentPlayer)
+  if (!store.isGameOver) {
+    logic.switchPlayer()
+    nextPlayer(store.currentPlayer)
+  }
   success()
 }
 
@@ -67,7 +69,14 @@ const onGetStatsSuccess = data => {
   $('#stats-message').text('Statistics successfully retrieved!')
   $('#stats-message').removeClass('failure')
   $('#stats-message').addClass('success')
-  $('#game-total').text(data.games.length)
+  const stats = logic.calculateStats(data)
+  console.log(stats)
+  $('#games-total').text(`Total Games: ${stats[0]}`)
+  $('#games-unfinished').text(`Unfinished Games: ${stats[1]}`)
+  $('#games-finished').text(`Finished Games: ${stats[2]}`)
+  $('#games-won').text(`Won Games: ${stats[3]}`)
+  $('#games-lost').text(`Finished Games: ${stats[4]}`)
+  $('#games-draw').text(`Finished Games: ${stats[5]}`)
 }
 
 const onGetStatsFailure = error => {

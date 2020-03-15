@@ -27,7 +27,7 @@ const onGameNav = () => {
 
 const onStatsNav = () => {
   hideViews()
-  $('#game-total').text('')
+  $('#statistics div p').text('')
   ui.showView('statistics')
 }
 
@@ -35,6 +35,7 @@ const onPasswordNav = () => {
   hideViews()
   ui.showView('change-password')
 }
+
 module.exports = {
   onRegisterNav,
   onLoginNav,
