@@ -11,6 +11,7 @@ const authEvents = require('./auth/events')
 const navEvents = require('./nav/events')
 
 $(() => {
+  $('#home-nav').on('click', navEvents.onHomeNav)
   $('#register-nav').on('click', navEvents.onRegisterNav)
   $('#login-nav').on('click', navEvents.onLoginNav)
   $('#game-nav').on('click', navEvents.onGameNav)

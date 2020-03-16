@@ -18,6 +18,7 @@
     <h1>Lucky's Tic-Tac-Toe</h1>
   </header>
   <nav>
+    <button id="home-nav">Home</button>
     <button id="game-nav" class="hidden">Game</button>
     <button id="stats-nav" class="hidden">Statistics</button>
     <button id="register-nav">Register</button>
@@ -26,11 +27,27 @@
     <button id="password-nav" class="hidden">Change Password</button>
   </nav>
   <main>
+
+    <article id="how-to">
+      <p>Tic-Tac-Toe is a simple game in which players take turns claiming
+        squares on a three by three grid. Players claim a square by marking it
+        with either an X or an O. A player wins by claiming three squares in a
+        row, column, or diagonal.</p>
+      <p id="logged-out">To start playing, click the "Register" button in the navigation bar
+        above. Once you have registerd click the "Login" button to log in.</p>
+      <p id="logged-in" class="hidden">If you want to play a game, click on the "Game" button in the navigation
+        bar and then click "New Game". After you have played some games you can
+        check out some statistics by clicking "Statistics".</p>
+    </article>
     <p id="auth-message" class="message"></p>
 
     <form id="sign-up" class="hidden">
       <fieldset>
         <legend>Sign up!</legend>
+        <p>This site only uses your email address to uniquely identify you, so
+          feel free to make one up.</p>
+        <p>Please do not reuse a password you use
+          on other sites.</p>
         <input type="text" name="credentials[email]" placeholder="name@domain.com">
         <input type="password" name="credentials[password]" placeholder="Password">
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">

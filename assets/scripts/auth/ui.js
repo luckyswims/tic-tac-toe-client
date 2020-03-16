@@ -39,6 +39,9 @@ const signInSuccess = function (data) {
   $('nav > .hidden').removeClass('hidden')
   $('#login-nav').addClass('hidden')
   $('#register-nav').addClass('hidden')
+  $('#how-to').removeClass('hidden')
+  $('#how-to #logged-in').removeClass('hidden')
+  $('#how-to #logged-out').addClass('hidden')
   store.user = data.user
 }
 
@@ -75,6 +78,8 @@ const signOutSuccess = function (data) {
   $('.message').addClass('hidden')
   $('.message').text('')
   $('#auth-message').text('Signed Out')
+  $('#how-to #logged-in').addClass('hidden')
+  $('#how-to #logged-out').removeClass('hidden')
   success()
 }
 

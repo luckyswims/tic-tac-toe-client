@@ -3,11 +3,17 @@
 const ui = require('./ui')
 
 const hideViews = () => {
+  $('article').addClass('hidden')
   $('form').addClass('hidden')
   $('section').addClass('hidden')
   $('.grid-container').addClass('hidden')
   $('.message').text('')
   $('.message').addClass('hidden')
+}
+
+const onHomeNav = () => {
+  hideViews()
+  ui.showView('how-to')
 }
 
 const onRegisterNav = () => {
@@ -37,6 +43,7 @@ const onPasswordNav = () => {
 }
 
 module.exports = {
+  onHomeNav,
   onRegisterNav,
   onLoginNav,
   onGameNav,
