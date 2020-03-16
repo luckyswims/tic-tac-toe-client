@@ -70,6 +70,7 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function (data) {
   console.log('signOutSuccess data is: ', data)
   $('nav > button').addClass('hidden')
+  $('#home-nav').removeClass('hidden')
   $('#login-nav').removeClass('hidden')
   $('#register-nav').removeClass('hidden')
   $('form').addClass('hidden')
