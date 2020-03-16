@@ -12,6 +12,7 @@ const navEvents = require('./nav/events')
 
 $(() => {
   $('#home-nav').on('click', navEvents.onHomeNav)
+  $('#about-nav').on('click', navEvents.onAboutNav)
   $('#register-nav').on('click', navEvents.onRegisterNav)
   $('#login-nav').on('click', navEvents.onLoginNav)
   $('#game-nav').on('click', navEvents.onGameNav)

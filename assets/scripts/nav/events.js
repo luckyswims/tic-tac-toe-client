@@ -16,6 +16,11 @@ const onHomeNav = () => {
   ui.showView('how-to')
 }
 
+const onAboutNav = () => {
+  hideViews()
+  ui.showView('about')
+}
+
 const onRegisterNav = () => {
   hideViews()
   ui.showView('sign-up')
@@ -44,6 +49,7 @@ const onPasswordNav = () => {
 
 module.exports = {
   onHomeNav,
+  onAboutNav,
   onRegisterNav,
   onLoginNav,
   onGameNav,

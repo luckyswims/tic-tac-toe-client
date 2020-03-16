@@ -122,6 +122,7 @@ section {
   padding: 5px;
 
   &.hidden {
+    display: none;
     padding: 0;
   }
 }
