@@ -52,10 +52,11 @@ Now that I have built the website, I have a better feel for what I should includ
 ## To Do list
 ~~-Update CSS to make the site more visually appealing~~  
 ~~-Add more detailed statistics: completed games,  incomplete games, wins/losses/draws~~  
+-Add How to play page which describes how you play tic-tac-toe, and explains how to use the app  
+-Add about the app page  
 -Add an AI opponent  
 -Add difficult leves for the AI opponent  
 -Add the ability to restart an incomplete game  
--Add the ability for users logged in on different devices to play against each other  
 
 [wireframe1]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/Initial%20Wireframes.jpg
 [wireframePage1]: https://github.com/luckyswims/tic-tac-toe-client/blob/master/assets/images/wireframePage1.jpg

@@ -75,8 +75,8 @@ const onGetStatsSuccess = data => {
   $('#games-unfinished').text(`Unfinished Games: ${stats[1]}`)
   $('#games-finished').text(`Finished Games: ${stats[2]}`)
   $('#games-won').text(`Won Games: ${stats[3]}`)
-  $('#games-lost').text(`Finished Games: ${stats[4]}`)
-  $('#games-draw').text(`Finished Games: ${stats[5]}`)
+  $('#games-lost').text(`Lost Games: ${stats[4]}`)
+  $('#games-draw').text(`Draw Games: ${stats[5]}`)
 }
 
 const onGetStatsFailure = error => {
