@@ -9,11 +9,13 @@ const clearForm = formID => {
 
 const success = () => {
   $('#auth-message').removeClass('failure')
+  $('#auth-message').removeClass('hidden')
   $('#auth-message').addClass('success')
 }
 
 const failure = () => {
   $('#auth-message').removeClass('success')
+  $('#auth-message').removeClass('hidden')
   $('#auth-message').addClass('failure')
 }
 

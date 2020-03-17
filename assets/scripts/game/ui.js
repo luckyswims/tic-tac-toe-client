@@ -5,11 +5,13 @@ const logic = require('./logic')
 
 const success = () => {
   $('#game-message').removeClass('failure')
+  $('#game-message').removeClass('hidden')
   $('#game-message').addClass('success')
 }
 
 const failure = () => {
   $('#game-message').removeClass('success')
+  $('#game-message').removeClass('hidden')
   $('#game-message').addClass('failure')
 }
 
