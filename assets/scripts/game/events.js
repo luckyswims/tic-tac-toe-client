@@ -7,12 +7,14 @@ const logic = require('./logic')
 const ai = require('./ai')
 
 const onNewGame = event => {
+  event.preventDefault()
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
 
 const onNewEasy = event => {
+  event.preventDefault()
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -20,6 +22,7 @@ const onNewEasy = event => {
 }
 
 const onNewMedium = event => {
+  event.preventDefault()
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
