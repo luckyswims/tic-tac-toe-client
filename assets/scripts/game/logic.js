@@ -83,6 +83,5 @@ module.exports = {
   isWinner,
   isDraw,
   clearBoard,
-  countIf,
   calculateStats
 }

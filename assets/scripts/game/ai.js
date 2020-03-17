@@ -38,7 +38,7 @@ const mediumAi = (board, lastMove) => {
     return winnerO
   } else if (winnerX !== null) {
     return winnerX
-  } else if (logic.countIf(board, 'O') === 0) {
+  } else if (openMoves(board).length === 8 && board[1] === '') {
     return 1
   } else if (board[(8 - lastMove)] === '') {
     return (8 - lastMove)
@@ -54,8 +54,16 @@ const impossibleAi = (board, lastMove) => {
     return winnerO
   } else if (winnerX !== null) {
     return winnerX
-  } else if (board[(8 - lastMove)] === '' && board[4] === '') {
-    return (8 - lastMove)
+  } else if (openMoves(board).length === 8 && board[4] === '') {
+    return 4
+  } else if (board[4] === 'O' && openMoves(board).length === 6) {
+    if ((board[0] === 'X' && board[8] === 'X') || (board[0] === 'X' && board[8] === 'X')) {
+      return 1
+    } else if (board[0] === '') {
+      return 0
+    } else {
+      return 6
+    }
   } else if (board[0] === '') {
     return 0
   } else if (board[6] === '') {
