@@ -29,6 +29,14 @@ const onNewMedium = event => {
   store.ai = 'medium'
 }
 
+const onNewImpossible = event => {
+  event.preventDefault()
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+  store.ai = 'impossible'
+}
+
 const moveUpdate = async (square, value) => {
   if (value === '' && !store.isGameOver) {
     $(`#${square}`).text(store.currentPlayer)
@@ -61,6 +69,10 @@ const onBoxClick = async (event) => {
       const moveMedium = ai.mediumAi(store.board, squareId)
       moveUpdate(moveMedium, store.board[moveMedium])
       break
+    case 'impossible':
+      const moveImpossible = ai.impossibleAi(store.board, squareId)
+      moveUpdate(moveImpossible, store.board[moveImpossible])
+      break
   }
 }
 
@@ -74,6 +86,7 @@ module.exports = {
   onNewGame,
   onNewEasy,
   onNewMedium,
+  onNewImpossible,
   onBoxClick,
   onGetStats
 }

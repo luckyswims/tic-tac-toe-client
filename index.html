@@ -29,21 +29,31 @@
   </nav>
   <main>
 
+    <p id="auth-message" class="message"></p>
+
     <article id="how-to">
       <p>Tic-Tac-Toe is a simple game in which players take turns claiming
         squares on a three by three grid. Players claim a square by marking it
         with either an X or an O. A player wins by claiming three squares in a
         row, column, or diagonal.</p>
-      <p id="logged-out">To start playing, click the "Register" button in the navigation bar
-        above. Once you have registerd click the "Login" button to log in.</p>
-      <p id="logged-in" class="hidden">If you want to play a game, click on the <b>Game</b> button in the navigation
-        bar to navigate to the Game screen. <br>If you want to play against another person on the same computer
-        click <b>New Local Game</b>. <br>If you want to play against a computer opponent, click <b>New Easy Game</b> to play
-        against an Easy opponent, or click <b>New Medium Game</b> to play against a more difficult opponent. <br>After
-        you have played some games you can check out some statistics by clicking <b>Statistics</b>.</p>
+      <p id="logged-out">To start playing, click the "Register" button in the
+        navigation bar above. Once you have registerd click the "Login" button
+        to log in.</p>
+      <div id="logged-in" class="hidden">
+        <p>If you want to play a game, click on the
+          <b>Game</b> button in the navigation bar to navigate to the Game screen.
+           <br>If you want to play against another person on the same computer
+          click <b>New Local Game</b>. <br>If you want to play against a computer
+          opponent:</p>
+        <ul>
+          <li>click <b>New Easy Game</b> to play against an easy opponent, or</li>
+          <li>click <b>New Medium Game</b> to play against a more difficult opponent, or</li>
+          <li>click <b>New Impossible Game </b> to play against a truly perfect opponent</li>
+        </ul>
+        <p>After you have played some games you can check out some statistics by
+          clicking <b>Statistics</b>.</p>
+      </div>
     </article>
-
-    <p id="auth-message" class="message"></p>
 
     <form id="sign-up" class="hidden">
       <fieldset>
@@ -98,6 +108,7 @@
         <button id="new-local-game">New Local Game</button>
         <button id="new-easy-game">New Easy Game</button>
         <button id="new-medium-game">New Medium Game</button>
+        <button id="new-impossible-game">New Impossible Game</button>
       </fieldset>
     </form>
 

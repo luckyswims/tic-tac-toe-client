@@ -47,7 +47,30 @@ const mediumAi = (board, lastMove) => {
   }
 }
 
+const impossibleAi = (board, lastMove) => {
+  const winnerO = findWinningMove(board, 'O')
+  const winnerX = findWinningMove(board, 'X')
+  if (winnerO !== null) {
+    return winnerO
+  } else if (winnerX !== null) {
+    return winnerX
+  } else if (board[(8 - lastMove)] === '' && board[4] === '') {
+    return (8 - lastMove)
+  } else if (board[0] === '') {
+    return 0
+  } else if (board[6] === '') {
+    return 6
+  } else if (board[8] === '') {
+    return 8
+  } else if (board[2] === '') {
+    return 2
+  } else {
+    easyAi(board)
+  }
+}
+
 module.exports = {
   easyAi,
-  mediumAi
+  mediumAi,
+  impossibleAi
 }

@@ -123,11 +123,9 @@ section {
 .message {
   display: inline;
   font-size: 18px;
-  padding: 5px;
 
   &.hidden {
     display: none;
-    padding: 0;
   }
 }
 

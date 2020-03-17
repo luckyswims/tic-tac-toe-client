@@ -25,6 +25,7 @@ $(() => {
   $('#new-local-game').on('click', gameEvents.onNewGame)
   $('#new-easy-game').on('click', gameEvents.onNewEasy)
   $('#new-medium-game').on('click', gameEvents.onNewMedium)
+  $('#new-impossible-game').on('click', gameEvents.onNewImpossible)
   $('.grid-container > div').on('click', gameEvents.onBoxClick)
   $('#get-stats').on('click', gameEvents.onGetStats)
 })
