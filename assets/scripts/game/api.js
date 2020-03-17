@@ -4,7 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const newGame = () => {
-  console.log('In game/api.js')
   return $.ajax({
     url: config.apiUrl + 'games',
     method: 'POST',
@@ -25,8 +24,6 @@ const boxClick = squareId => {
       over: store.isGameOver
     }
   }
-  console.log(object)
-  console.log('In game/api.js')
   return $.ajax({
     url: config.apiUrl + 'games/' + store.game.id,
     method: 'PATCH',
@@ -38,7 +35,6 @@ const boxClick = squareId => {
 }
 
 const getStats = () => {
-  console.log('In game/api.js')
   return $.ajax({
     url: config.apiUrl + 'games',
     method: 'GET',

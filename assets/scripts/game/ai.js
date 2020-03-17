@@ -28,7 +28,6 @@ const findWinningMove = (board, player) => {
 const easyAi = board => {
   const options = openMoves(board)
   const index = Math.trunc(Math.random() * options.length)
-  console.log(options[index])
   return options[index]
 }
 

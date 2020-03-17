@@ -7,16 +7,12 @@ const logic = require('./logic')
 const ai = require('./ai')
 
 const onNewGame = event => {
-  event.preventDefault()
-  console.log('New Game Clicked!')
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
 
 const onNewEasy = event => {
-  event.preventDefault()
-  console.log('New Game Clicked!')
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -24,8 +20,6 @@ const onNewEasy = event => {
 }
 
 const onNewMedium = event => {
-  event.preventDefault()
-  console.log('New Game Clicked!')
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -53,12 +47,8 @@ const moveUpdate = async (square, value) => {
 
 const onBoxClick = async (event) => {
   const squareId = event.target.id
-  console.log('Square ID: ' + squareId)
   const squareValue = $(`#${squareId}`).text()
-  console.log('Square Value: ' + squareValue)
-  console.log('isGameOver: ' + store.isGameOver)
   await moveUpdate(squareId, squareValue)
-  console.log(store.ai)
   switch (store.ai) {
     case 'easy':
       const moveEasy = ai.easyAi(store.board)
@@ -72,7 +62,6 @@ const onBoxClick = async (event) => {
 }
 
 const onGetStats = () => {
-  console.log('Get Stats Clicked')
   api.getStats()
     .then(ui.onGetStatsSuccess)
     .catch(ui.onGetStatsFailure)

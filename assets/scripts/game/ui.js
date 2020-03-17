@@ -34,7 +34,6 @@ const draw = () => {
 }
 
 const newGameSuccess = data => {
-  console.log('newGameSuccess data is: ', data)
   $('.grid-container > div').text('')
   logic.clearBoard()
   $('.grid-container').removeClass('hidden')
@@ -52,7 +51,6 @@ const newGameFailure = error => {
 }
 
 const boxClickSuccess = data => {
-  console.log('boxClickSuccess data is: ', data)
   if (!store.isGameOver) {
     logic.switchPlayer()
     nextPlayer(store.currentPlayer)
@@ -67,12 +65,10 @@ const boxClickFailure = error => {
 }
 
 const onGetStatsSuccess = data => {
-  console.log('onGetStatsSuccess data is: ', data)
   $('#stats-message').text('Statistics successfully retrieved!')
   $('#stats-message').removeClass('failure')
   $('#stats-message').addClass('success')
   const stats = logic.calculateStats(data)
-  console.log(stats)
   $('#games-total').text(`Total Games: ${stats[0]}`)
   $('#games-unfinished').text(`Unfinished Games: ${stats[1]}`)
   $('#games-finished').text(`Finished Games: ${stats[2]}`)

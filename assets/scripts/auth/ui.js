@@ -22,7 +22,6 @@ const failure = () => {
 const signUpSuccess = function (data) {
   $('#auth-message').text('Signed up successfully. Please login to proceed.')
   success()
-  console.log('signUpSuccess data is: ', data)
   clearForm('sign-up')
 }
 
@@ -36,7 +35,6 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#auth-message').text('Signed in successfully')
   success()
-  console.log('signInSuccess data is: ', data)
   clearForm('sign-in')
   $('nav > .hidden').removeClass('hidden')
   $('#login-nav').addClass('hidden')
@@ -57,7 +55,6 @@ const signInFailure = function (error) {
 const changePasswordSuccess = function (data) {
   $('#auth-message').text('Changed password')
   success()
-  console.log('changePasswordSuccess data is: ', data)
   $('#change-password')[0].reset()
   $('#change-password').addClass('hidden')
 }
@@ -70,7 +67,6 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  console.log('signOutSuccess data is: ', data)
   $('nav > button').addClass('hidden')
   $('#home-nav').removeClass('hidden')
   $('#about-nav').removeClass('hidden')

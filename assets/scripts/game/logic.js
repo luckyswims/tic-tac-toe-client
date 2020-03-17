@@ -8,7 +8,6 @@ const switchPlayer = () => {
   } else {
     store.currentPlayer = 'X'
   }
-  console.log('Current player is ' + store.currentPlayer)
 }
 
 const isWinner = board => {
