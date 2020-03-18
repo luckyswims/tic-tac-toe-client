@@ -61,19 +61,21 @@ const onBoxClick = async (event) => {
   const squareId = event.target.id
   const squareValue = $(`#${squareId}`).text()
   await moveUpdate(squareId, squareValue)
-  switch (store.ai) {
-    case 'easy':
-      const moveEasy = ai.easyAi(store.board)
-      moveUpdate(moveEasy, store.board[moveEasy])
-      break
-    case 'medium':
-      const moveMedium = ai.mediumAi(store.board, squareId)
-      moveUpdate(moveMedium, store.board[moveMedium])
-      break
-    case 'impossible':
-      const moveImpossible = ai.impossibleAi(store.board, squareId)
-      moveUpdate(moveImpossible, store.board[moveImpossible])
-      break
+  if (store.currentPlayer === 'O') {
+    switch (store.ai) {
+      case 'easy':
+        const moveEasy = ai.easyAi(store.board)
+        moveUpdate(moveEasy, store.board[moveEasy])
+        break
+      case 'medium':
+        const moveMedium = ai.mediumAi(store.board, squareId)
+        moveUpdate(moveMedium, store.board[moveMedium])
+        break
+      case 'impossible':
+        const moveImpossible = ai.impossibleAi(store.board, squareId)
+        moveUpdate(moveImpossible, store.board[moveImpossible])
+        break
+    }
   }
 }
 
