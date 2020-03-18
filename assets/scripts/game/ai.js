@@ -57,7 +57,7 @@ const impossibleAi = (board, lastMove) => {
   } else if (openMoves(board).length === 8 && board[4] === '') {
     return 4
   } else if (board[4] === 'O' && openMoves(board).length === 6) {
-    if ((board[0] === 'X' && board[8] === 'X') || (board[0] === 'X' && board[8] === 'X')) {
+    if ((board[0] === 'X' && board[8] === 'X') || (board[2] === 'X' && board[6] === 'X')) {
       return 1
     } else if (board[0] === '') {
       return 0

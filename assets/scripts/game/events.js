@@ -11,6 +11,7 @@ const onNewGame = event => {
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
+  store.ai = null
 }
 
 const onNewEasy = event => {
