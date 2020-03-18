@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Lucky's Tic-Tac-Toe</h1>
+  </header>
+  <nav>
+    <button id="home-nav">Home</button>
+    <button id="about-nav">About</button>
+    <button id="game-nav" class="hidden">Game</button>
+    <button id="stats-nav" class="hidden">Statistics</button>
+    <button id="register-nav">Register</button>
+    <button id="login-nav">Login</button>
+    <button id="logout-nav" class="hidden">Logout</button>
+    <button id="password-nav" class="hidden">Change Password</button>
+  </nav>
+  <main>
+
+    <p id="auth-message" class="message"></p>
+
+    <article id="how-to">
+      <p>Tic-Tac-Toe is a simple game in which players take turns claiming
+        squares on a three by three grid. Players claim a square by marking it
+        with either an X or an O. A player wins by claiming three squares in a
+        row, column, or diagonal.</p>
+      <p id="logged-out">To start playing, click the <b>Register</b> button in the
+        navigation bar above. Once you have registered click the <b>Login</b> button
+        to log in.</p>
+      <div id="logged-in" class="hidden">
+        <p>If you want to play a game, click on the
+          <b>Game</b> button in the navigation bar to navigate to the Game screen.
+           <br>If you want to play against another person on the same computer
+          click <b>New Local Game</b>. <br>If you want to play against a computer
+          opponent:</p>
+        <ul>
+          <li>click <b>New Easy Game</b> to play against an easy opponent, or</li>
+          <li>click <b>New Medium Game</b> to play against a more difficult opponent, or</li>
+          <li>click <b>New Impossible Game </b> to play against a truly perfect opponent</li>
+        </ul>
+        <p>After you have played some games you can check out some statistics by
+          clicking <b>Statistics</b>.</p>
+      </div>
+    </article>
+
+    <form id="sign-up" class="hidden">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <p>This site only uses your email address to uniquely identify you, so
+          feel free to make one up.</p>
+        <p>Please do not reuse a password you use
+          on other sites.</p>
+        <input type="text" name="credentials[email]" placeholder="name@domain.com">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+        <input type="submit" value="Sign up!">
+      </fieldset>
+    </form>
+
+    <form id="sign-in" class="hidden">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input type="text" name="credentials[email]" placeholder="name@domain.com">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+
+    <form id="change-password" class="hidden">
+      <fieldset>
+        <legend>Change your password</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New password">
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+
+    <section id="statistics" class="hidden">
+      <button id="get-stats">Get Statistics</button>
+      <div>
+        <p id="stats-message" class="message"></p>
+        <p id="games-total"></p>
+        <p id="games-unfinished"></p>
+        <p id="games-finished"></p>
+        <p id="games-won"></p>
+        <p id="games-lost"></p>
+        <p id="games-draw"></p>
+      </div>
+    </section>
+
+    <p id="game-message" class="message"></p>
+
+    <form id="new-game" class="hidden">
+      <fieldset>
+        <legend>Start a New Game!</legend>
+        <button id="new-local-game">New Local Game</button>
+        <button id="new-easy-game">New Easy Game</button>
+        <button id="new-medium-game">New Medium Game</button>
+        <button id="new-impossible-game">New Impossible Game</button>
+      </fieldset>
+    </form>
+
+    <div class="grid-container hidden">
+      <div id="0"></div>
+      <div id="1"></div>
+      <div id="2"></div>
+      <div id="3"></div>
+      <div id="4"></div>
+      <div id="5"></div>
+      <div id="6"></div>
+      <div id="7"></div>
+      <div id="8"></div>
+    </div>
+
+    <article id="about" class="hidden">
+      <h2>About this site</h2>
+      <p>This website was developed by John Lucker as a project to demonstrate
+      the skills he has developed working in HTML, CSS, and JavaScript. The
+      backend API was developed by General Assembly for use by students in
+      projects.</p>
+    </article>
+
+  </main>
+  <footer>
+    <p>This application is published on github: <a href="https://github.com/luckyswims/tic-tac-toe-client">Github Link</a></p>
+  </footer>
+</body>
+
+</html>
